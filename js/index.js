@@ -2,7 +2,7 @@
 
 // Constants
 let basePrice = 10;
-let maxPrice = Number(document.querySelector("strong").innerText.substring(1,3));
+//let maxPrice =  document.querySelector("strong").innerText;
 let ingredients = {
   pepperoni: { name: 'pepperoni', price: 1 },
   mushrooms: { name: 'Mushrooms', price: 1 },
@@ -56,7 +56,6 @@ function renderPepperoni() {
       buttons.pepperoni.className = "btn btn-pepperoni active";
       document.querySelector("#prices-list > li:nth-child(1)").innerHTML = "$1 pepperoni";
       document.querySelector("#prices-list > li:nth-child(1)").style.visibility = "visible";
-     // document.querySelector("strong").innerText
       
     } else {
       onePep.style.visibility = 'hidden';
@@ -72,9 +71,11 @@ function renderMushrooms() {
     if (state.mushrooms) {
       oneMush.style.visibility = 'visible';
       buttons.mushrooms.className = "btn btn-mushrooms active";
+      document.querySelector("#prices-list > li:nth-child(2)").style.visibility = "visible";
     } else {
       oneMush.style.visibility = 'hidden';
       buttons.mushrooms.className = "btn btn-mushrooms";
+      document.querySelector("#prices-list > li:nth-child(2)").style.visibility = "hidden";
     }
   });
 }
@@ -85,9 +86,11 @@ function renderGreenPeppers() {
     if (state.greenPeppers) {
       oneGreen.style.visibility = 'visible';
       buttons.greenPeppers.className = "btn btn-green-peppers active";
+      document.querySelector("#prices-list > li:nth-child(3)").style.visibility = "visible";
     } else {
       oneGreen.style.visibility = 'hidden';
       buttons.greenPeppers.className = "btn btn-green-peppers";
+      document.querySelector("#prices-list > li:nth-child(3)").style.visibility = "hidden";
     }
   });
 }
@@ -98,9 +101,11 @@ function renderWhiteSauce() {
     if (state.whiteSauce) {
       oneSauce.style.visibility = 'visible';
       buttons.whiteSauce.className = "btn btn-sauce active";
+      document.querySelector("#prices-list > li:nth-child(4)").style.visibility = "visible";
     } else {
       oneSauce.style.visibility = 'hidden';
       buttons.whiteSauce.className = "btn btn-sauce";
+      document.querySelector("#prices-list > li:nth-child(4)").style.visibility = "hidden";
     }
   });
 }
@@ -110,9 +115,12 @@ function renderGlutenFreeCrust() {
     if (state.glutenFreeCrust) {
       oneCrust.style.visibility = 'visible';
       buttons.glutenFreeCrust.className = "btn btn-crust active";
+      
+      
     } else {
       oneCrust.style.visibility = 'hidden';
       buttons.glutenFreeCrust.className = "btn btn-crust";
+      
     }
   });
 }
