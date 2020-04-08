@@ -2,6 +2,7 @@
 
 // Constants
 let basePrice = 10;
+let maxPrice = Number(document.querySelector("strong").innerText.substring(1,3));
 let ingredients = {
   pepperoni: { name: 'pepperoni', price: 1 },
   mushrooms: { name: 'Mushrooms', price: 1 },
@@ -17,6 +18,14 @@ let buttons = {
   whiteSauce: document.querySelector("body > div.panel.controls > ul > li:nth-child(4) > button"),
   glutenFreeCrust: document.querySelector("body > div.panel.controls > ul > li:nth-child(5) > button")
 }
+
+// let prices = {
+//   pepperoni: document.querySelector("body > aside > ul > li:nth-child(1)"),
+//   mushrooms: document.querySelector("body > aside > ul > li:nth-child(2)"),
+//   greenPeppers: document.querySelector("body > aside > ul > li:nth-child(3)"),
+//   whiteSauce: document.querySelector("body > aside > ul > li:nth-child(4)"),
+//   glutenFreeCrust: document.querySelector("body > aside > ul > li:nth-child(5)")
+// }
 
 // Initial value of the state (the state values can change over time)
 let state = {
@@ -36,8 +45,8 @@ function renderEverything() {
   renderWhiteSauce();
   renderGlutenFreeCrust();
 
-  renderButtons();
-  renderPrice();
+  //renderButtons();
+  //renderPrice();
 }
 
 function renderPepperoni() {
@@ -45,9 +54,15 @@ function renderPepperoni() {
     if (state.pepperoni) {
       onePep.style.visibility = 'visible';
       buttons.pepperoni.className = "btn btn-pepperoni active";
+      document.querySelector("#prices-list > li:nth-child(1)").innerHTML = "$1 pepperoni";
+      document.querySelector("#prices-list > li:nth-child(1)").style.visibility = "visible";
+     // document.querySelector("strong").innerText
+      
     } else {
       onePep.style.visibility = 'hidden';
       buttons.pepperoni.className = "btn btn-pepperoni";
+      document.querySelector("#prices-list > li:nth-child(1)").innerHTML = "";
+      document.querySelector("#prices-list > li:nth-child(1)").style.visibility = "hidden";
     }
   });
 }
@@ -107,9 +122,12 @@ function renderGlutenFreeCrust() {
 //   // Iteration 3: add/remove the class "active" of each `<button class="btn">`
 // }
 
-function renderPrice() {
-  // Iteration 4: change the HTML of `<aside class="panel price">`
-}
+
+// function renderPrice() {
+//   // Iteration 4: change the HTML of `<aside class="panel price">`
+
+//     //... your code goes here
+// }
 
 renderEverything();
 
